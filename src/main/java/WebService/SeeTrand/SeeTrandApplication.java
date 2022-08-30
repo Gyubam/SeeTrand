@@ -17,7 +17,7 @@ public class SeeTrandApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(SeeTrandApplication.class, args);
-		
+
 	}
 
 }
