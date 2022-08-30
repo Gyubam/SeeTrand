@@ -21,7 +21,9 @@ public class TrendApi {
         requestHeaders.put("X-Naver-Client-Secret", clientSecret);
         requestHeaders.put("Content-Type", "application/json");
 
-        String requestBody = "{\"startDate\":\"2017-01-01\"," +
+        String date = "2017-02-01";
+        // "2017-01-01"
+        String requestBody = "{\"startDate\":" + "\"" + date + "\"," +
                 "\"endDate\":\"2017-04-30\"," +
                 "\"timeUnit\":\"month\"," +
                 "\"keywordGroups\":[{\"groupName\":\"한글\"," + "\"keywords\":[\"한글\",\"korean\"]}," +

@@ -24,12 +24,21 @@ public class HomeController {
     @GetMapping("/")
     public String home() {
 
-        TrendApi trendApi = new TrendApi();
-        trendApi.init();
+//        TrendApi trendApi = new TrendApi();
+//        trendApi.init();
 
-        return "home";
+        return "index";
 
     }
+    @GetMapping("/searchWord")
+    public String searchWord() {
+
+//        SeleniumCrawling seleniumCrawling = new SeleniumCrawling();
+//        seleniumCrawling.process();
+
+        return "layout/searchWord";
+    }
+
 
     @GetMapping("/re")
     public String ho() {
