@@ -28,8 +28,8 @@ public class HomeController {
     @GetMapping("/")
     public String home() {
 
-//        TrendApi trendApi = new TrendApi();
-//        trendApi.init();
+        TrendApi trendApi = new TrendApi();
+        trendApi.init();
 
         return "index";
 
@@ -47,6 +47,12 @@ public class HomeController {
             System.out.println("searchListDto word = " + searchListDto.getSearchWord());
         }
         return "layout/searchWord";
+    }
+
+    @GetMapping("/searchGraph")
+    public String searchGraph(Model model) {
+
+        return "layout/searchGraph";
     }
 
 
