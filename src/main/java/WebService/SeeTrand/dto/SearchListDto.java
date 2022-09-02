@@ -1,8 +1,10 @@
 package WebService.SeeTrand.dto;
 
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class SearchListDto {
 
     private Integer index;

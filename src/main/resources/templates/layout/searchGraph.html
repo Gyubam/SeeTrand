@@ -59,59 +59,162 @@
     </style>
 
 <body>
-<script>
+<script th:inline="javascript">
+
 // Our labels along the x-axis
-var years = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
+
+var dates = [];
+
 // For drawing the lines
-var africa = [86,114,106,106,107,111,133,221,783,2478];
-var asia = [282,350,411,502,635,809,947,1402,3700,5267];
-var europe = [168,170,178,190,203,276,408,547,675,734];
-var latinAmerica = [40,20,10,16,24,38,74,167,508,784];
-var northAmerica = [6,3,2,2,7,26,82,172,312,433];
+
+
+var ratio0 = [];
+var ratio1 = [];
+var ratio2 = [];
+var ratio3 = [];
+var ratio4 = [];
+var ratio5 = [];
+var ratio6 = [];
+var ratio7 = [];
+var ratio8 = [];
+var ratio9 = [];
+
+var title = [];
+/*[# th:each="titleName : ${title}"]*/
+        var titleName = /*[[${titleName}]]*/;
+        title.push(titleName);
+/*[/]*/
+
+/*[# th:each="date : ${dateList}"]*/
+        var date = /*[[${date}]]*/;
+        dates.push(date);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio0}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio0.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio1}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio1.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio2}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio2.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio3}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio3.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio4}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio4.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio5}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio5.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio6}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio6.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio7}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio7.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio8}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio8.push(ratio);
+/*[/]*/
+
+/*[# th:each="ratio : ${ratio9}"]*/
+        var ratio = /*[[${ratio}]]*/;
+        ratio9.push(ratio);
+/*[/]*/
+
+
 
 window.onload=function(){
   var ctx = document.getElementById("myChart");
   var myChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: years,
+    labels: dates,
     datasets: [
       {
-        data: africa,
-        label: "Africa",
+        data: ratio0,
+        label: title[0],
         borderColor: "#3e95cd",
         fill: false
       },
       {
-        data: asia,
-        label: "Asia",
+        data: ratio1,
+        label: title[1],
         borderColor: "#8e5ea2",
         fill: false
       },
       {
-        data: europe,
-        label: "Europe",
+        data: ratio2,
+        label: title[2],
         borderColor: "#3cba9f",
         fill: false
       },
       {
-        data: latinAmerica,
-        label: "Latin America",
+        data: ratio3,
+        label: title[3],
         borderColor: "#e8c3b9",
         fill: false
       },
       {
-        data: northAmerica,
-        label: "North America",
+        data: ratio4,
+        label: title[4],
         borderColor: "#c45850",
         fill: false
-      }
+      },
+      {
+        data: ratio5,
+        label: title[5],
+        borderColor: "#271110",
+        fill: false
+      },
+      {
+        data: ratio6,
+        label: title[6],
+        borderColor: "#990099",
+        fill: false
+      },
+      {
+        data: ratio7,
+        label: title[7],
+        borderColor: "#00FFFF",
+        fill: false
+      },
+      {
+        data: ratio8,
+        label: title[8],
+        borderColor: "#99FF00",
+        fill: false
+      },
+      {
+        data: ratio9,
+        label: title[9],
+        borderColor: "#FF3366",
+        fill: false
+      },
     ]
   },
   options: {
     title: {
       display: true,
-      text: 'World population per region (in millions)'
+      text: '실시간 검색어 월별 그래프'
         }
       }
   });
@@ -127,9 +230,6 @@ window.onload=function(){
       <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/">About</a>
       <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/searchWord">급상승 검색어</a>
       <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/searchGraph">검색 추이</a>
-      <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-      <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-      <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
     </div>
   </div>
   <!-- Page content wrapper-->
@@ -141,16 +241,16 @@ window.onload=function(){
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-            <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#!">Action</a>
-                <a class="dropdown-item" href="#!">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#!">Something else here</a>
-              </div>
+<!--            <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>-->
+<!--            <li class="nav-item dropdown">-->
+<!--              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
+<!--              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
+<!--                <a class="dropdown-item" href="#!">Action</a>-->
+<!--                <a class="dropdown-item" href="#!">Another action</a>-->
+<!--                <div class="dropdown-divider"></div>-->
+<!--                <a class="dropdown-item" href="#!">Something else here</a>-->
+<!--              </div>-->
             </li>
           </ul>
         </div>
@@ -159,11 +259,9 @@ window.onload=function(){
     <!-- Page content-->
     <div class="container-fluid">
 
-      <canvas id="myChart" width="1600" height="750"></canvas>
-
-      <br></br>
-
-      <p> 실시간 인기 검색어는 1위부터 10위까지 제공됩니다.</p>
+      <canvas id="myChart" width="1600" height="700"></canvas>
+      <p style="color: red";> ** 검색량이 충분하지 않은 경우 그래프가 출력되지 않을 수 있습니다 !</p>
+      <p style="color: red";> ** 해당 수치는 상대적인 값을 나타냅니다</p>
     </div>
   </div>
 </div>
