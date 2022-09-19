@@ -30,3 +30,12 @@
 <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <img src ="https://img.shields.io/badge/thymeleaf-006400?&style=for-the-badge&logo=thymeleaf&logoColor=white"/>
 </div>
+
+
+### 개발 계획
+
+  <a href="https://spangle-yak-11c.notion.site/429cc8cdf5944bf38f4030d4614757f6">
+    <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
+  </a>
+
+<br></br>
