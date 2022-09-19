@@ -9,6 +9,10 @@
 - Selenium
 - 네이버 데이터랩 API
 
+## WBS
+
+![씨트렌드 WBS](https://user-images.githubusercontent.com/71515740/190971798-3326e65b-e8d8-4875-8d7c-623bf8aa79e5.PNG)
+
 
 ## 실행 화면
 <img src="https://user-images.githubusercontent.com/71515740/188068205-9f6e340a-05d5-4fa7-865d-f4d0274f32a5.PNG">
